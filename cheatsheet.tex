@@ -1,0 +1,114 @@
+\documentclass[a4j, titlepage]{jarticle}
+\usepackage{float}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{mediabb}
+\makeatletter
+%https://qiita.com/ta_b0_/items/2619d5927492edbb5b03
+\usepackage{listings,jlisting} %日本語のコメントアウトをする場合jlstlistingが必要
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+%ここからソースコードの表示に関する設定
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex
+}
+%ここまでソースコードの表示に関する設定
+
+\if0
+---------------------------------こめこめこめこめこめこめこめこめこめこめこめ
+\renewcommand{\thefigure}{\arabic{figure}}
+\@addtoreset{figure}{section}
+\makeatother
+\makeatletter
+\renewcommand{\thetable}{\arabic{table}}
+\@addtoreset{table}{section}
+\makeatother
+\makeatletter
+\renewcommand{\theequation}{\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+---------------------------------こめこめこめこめこめこめこめこめこめこめこめ
+\fi
+
+\usepackage{multicol}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{fancyvrb}
+\usepackage{otf}
+\usepackage{here}
+
+
+\title{\LaTeX の俺的最強チートシート}
+\author{Bony\_Chops}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{-1}
+\section{はじめに}
+\textbf{Hello hackers!} これから\textbf{Word}から\LaTeX を使い始めるキミや、ある程度\LaTeX には慣れたけどコマンドを忘れがちなキミに向けたチートシートです。
+\subsection{環境}
+本チートシートは以下の環境を使っていることを想定して書いています。特殊な仕様意外は基本的に同じだと思います。
+
+\begin{table*}[htbp]
+    \center
+    \caption{筆者の環境}
+    \begin{tabular}{|c|c|} \hline
+        OS & Ubuntu 20.04 \\ \hline
+        エディタ & Visual Studio Code \\ \hline
+        環境 & TeX Live 2017 \\ \hline
+    \end{tabular}
+\end{table*}
+
+\section{コマンド集}
+
+\begin{itembox}[l]{\textbackslash section $\cdot$ \textbackslash subsection $\cdot$ \textbackslash subsubsection}
+
+\begin{multicols}{2}
+
+\subsubsection*{コマンド}
+
+\begin{lstlisting}
+\section{目的}
+今回はりんごの剥き方を理解することを
+目的とする。
+\end{lstlisting}
+
+\newpage
+\subsubsection*{実行結果}
+\setcounter{section}{0}
+\begin{shadebox}
+\section{目的}
+今回はりんごの剥き方を理解することを目的とする。
+\end{shadebox}
+
+
+
+\end{multicols}
+
+\end{itembox}
+
+
+
+\begin{thebibliography}{9}
+    \bibitem{text} 令和2年度後期工学実験実習IIIテキスト
+\end{thebibliography}
+
+
+\end{document}
