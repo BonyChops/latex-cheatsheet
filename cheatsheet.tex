@@ -23,7 +23,8 @@
     numberstyle={\scriptsize},
     stepnumber=1,
     numbersep=1zw,
-    lineskip=-0.5ex
+    lineskip=-0.5ex,
+    breakindent=0pt
 }
 %ここまでソースコードの表示に関する設定
 
@@ -79,25 +80,43 @@
 \section{コマンド集}
 
 \begin{itembox}[l]{\textbackslash section $\cdot$ \textbackslash subsection $\cdot$ \textbackslash subsubsection}
-
+章 $\cdot$ 節 $\cdot$ 項 を構成する
 \begin{multicols}{2}
 
 \subsubsection*{コマンド}
 
 \begin{lstlisting}
 \section{目的}
-今回はりんごの剥き方を理解することを
-目的とする。
+今回はりんごの剥き方を理解することを目的とする。
+
+\section{理論}
+本章では本実験に必要な理論をまとめる。
+
+\subsection{包丁について}
+本節では包丁についてをまとめる。
+
+\subsubsection{さばき方}
+本項では $\cdots$
 \end{lstlisting}
 
 \newpage
 \subsubsection*{実行結果}
 \setcounter{section}{0}
-\begin{shadebox}
-\section{目的}
-今回はりんごの剥き方を理解することを目的とする。
-\end{shadebox}
+\begin{screen}
 
+    \section{目的}
+    今回はりんごの剥き方を理解することを目的とする。
+
+    \section{理論}
+    本章では本実験に必要な理論をまとめる。
+
+    \subsection{包丁について}
+    本節では包丁についてをまとめる。
+
+    \subsubsection{さばき方}
+    本項では $\cdots$
+
+\end{screen}
 
 
 \end{multicols}
