@@ -1,0 +1,43 @@
+\documentclass[a4j, titlepage]{jarticle}
+\usepackage{float}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{multicol}
+\usepackage{okumacro}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{fancyvrb}
+\usepackage{otf}
+\usepackage{here}
+%\usepackage{mediabb}
+\makeatletter
+%https://qiita.com/ta_b0_/items/2619d5927492edbb5b03
+\usepackage{listings,jlisting} %日本語のコメントアウトをする場合jlstlistingが必要
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+%ここからソースコードの表示に関する設定
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex
+}
+%ここまでソースコードの表示に関する設定
+
+\begin{document}
+
+ここにテキストをテスト...
+
+\end{document}
