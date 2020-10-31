@@ -1,0 +1,40 @@
+{
+	"itembox": {
+		"prefix": "itembox",
+		"body": [
+			"begin{itembox}[l]{$1}",
+			"    $2",
+			"\\end{itembox}"
+		]
+	},
+	"screen": {
+		"prefix": "screen",
+		"body": [
+			"begin{screen}",
+			"    $1",
+			"\\end{screen}"
+		]
+	},
+	"image": {
+		"prefix": "image",
+		"body": [
+			"begin{figure}[htbp]",
+			"    \\begin{center}",
+			"       \\includegraphics[width=8cm]{$1}",
+			"       \\caption{$2}",
+			"       \\label{$3}",
+			"    \\end{center}",
+			"\\end{figure}"
+		]
+	},
+	"fancy": {
+		"prefix": "fancy",
+		"body": "\\pagestyle{fancy}\n\\lhead{$1}\n\\chead{$2}\n\\rhead{$3}\n\\rfoot{$4}\n\\cfoot{$5}\n\\renewcommand{\\footrulewidth}{0.4pt}",
+		"description": ""
+	},
+	"fancy-name": {
+		"prefix": "fancy-name",
+		"body": "\\pagestyle{fancy}\n\\lhead{$1}\n\\chead{$2}\n\\rhead{学科 ~~~ 番 ~ 氏名 \\hspace{120pt}}\n\\rfoot{$4}\n\\cfoot{$5}\n\\renewcommand{\\footrulewidth}{0.4pt}",
+		"description": ""
+	}
+}

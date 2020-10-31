@@ -55,18 +55,30 @@
 \usepackage{otf}
 \usepackage{here}
 
+\newcommand{\GitHub}{\includegraphics[scale=0.07]{image/github.png}}
+\newcommand{\VSCode}{\includegraphics[scale=0.012]{image/vscode-icon.png}}
 
-\title{\LaTeX の俺的最強チートシート}
+\title{日本語 の俺的最強チートシート}
 \author{Bony\_Chops}
+
 
 \begin{document}
 \maketitle
+\begin{abstract}
+    ここを書くには
+    \begin{lstlisting}
+\begin{abstract}
+    ここを書くには...
+\end{abstract}
+    \end{lstlisting}
+\end{abstract}
+
 \setcounter{section}{-1}
 \section{はじめに}
-\textbf{Hello hackers!} これから\textbf{Word}から\LaTeX を使い始めるキミや、ある程度\LaTeX には慣れたけどコマンドを忘れがちなキミに向けたチートシートです。
+\textbf{Hello hackers!} これから\textbf{Word}から日本語 を使い始めるキミや、ある程度日本語 には慣れたけどコマンドを忘れがちなキミに向けたチートシートです。
 \subsection{付録について}
 このPDFや\TeX ソース、付録に掲載しているソースは全てGitHub上で公開しています。実践する際にぜひお役立てください。\\
-(\url{https://github.com/BonyChops/latex-cheatsheet})
+\GitHub BonyChops / latex-cheatsheet (\url{https://github.com/BonyChops/latex-cheatsheet})
 \subsection{環境}
 本チートシートは以下の環境を使っていることを想定して書いています。特殊な仕様意外は基本的に同じだと思います。
 
@@ -521,7 +533,7 @@
 \end{flushright}
 \end{lstlisting}
 
-
+\vfill\null
 \columnbreak
 
 \subsubsection*{実行結果}
@@ -539,12 +551,88 @@
 
 \end{screen}
 \end{multicols}
+
+\subsection{文字サイズ $\cdot$ 書式}
+使いたい箇所に\verb|{\コマンド 文字列}|というフォーマットで使います．
+
+\begin{multicols}{2}
+\subsubsection*{(例)}
+\begin{lstlisting}
+文字の大きさを{\Huge 変えます}
+\end{lstlisting}
+
+\vfill\null
+\columnbreak
+
+\subsubsection*{実行結果}
+\begin{screen}
+
+    文字の大きさを{\Huge 変えます}
+
+\end{screen}
+\end{multicols}
+
+
+    \subsubsection*{(例2)}
+    \begin{lstlisting}
+    \textdagger {\it 純黒の\ruby{悪夢}{Nightmare}} \textdagger
+    \end{lstlisting}
+
+    \subsubsection*{実行結果}
+    \begin{screen}
+
+        \textdagger {\it 純黒の\ruby{悪夢}{Nightmare}} \textdagger
+
+    \end{screen}
+
+
+\subsubsection*{文字サイズ\cite{size}}
+\begin{table}[H]
+    \center
+    \begin{tabular}{|l|l|l|} \hline
+        コマンド & サイズ & 見え方\\ \hline
+        \verb|\tiny| & 5pt & {\tiny 日本語 } \\ \hline
+        \verb|\scriptsize| & 7pt & {\scriptsize 日本語 } \\ \hline
+        \verb|\footnotesize| & 8pt & {\footnotesize 日本語 } \\ \hline
+        \verb|\small| & 9pt	& {\small 日本語 } \\ \hline
+        \verb|\normalsize| & 10pt (標準) & {\normalsize 日本語 } \\ \hline
+        \verb|\large| & 12pt & {\large 日本語 } \\ \hline
+        \verb|\Large| & 14.4pt & {\Large 日本語 } \\ \hline
+        \verb|\LARGE| & 17.28pt & {\LARGE 日本語 } \\ \hline
+        \verb|\huge| & 20.74pt & {\huge 日本語 } \\ \hline
+        \verb|\Huge| & 24.88pt & {\Huge 日本語 } \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+\subsubsection*{書体\cite{style}}
+
+\begin{table}[H]
+    \center
+    \begin{tabular}{|l|l|l|} \hline
+        コマンド & 名称 & 見え方\\ \hline
+        \verb|\rm| & ローマン体 (標準) & {\rm スヌーピー Snoopy} \\ \hline
+        \verb|\bf| & ボールド体 (太字) & {\bf スヌーピー Snoopy} \\ \hline
+        \verb|\it| & イタリック体 (強調) & {\it スヌーピー Snoopy} \\ \hline
+        \verb|\sf| & サンセリフ体 & {\sf スヌーピー Snoopy} \\ \hline
+        \verb|\sl| & 斜体 & {\sl スヌーピー Snoopy} \\ \hline
+        \verb|\sc| & スモールキャップス (全部大文字) & {\sc スヌーピー Snoopy} \\ \hline
+        \verb|\tt| & タイプライタ体 & {\tt スヌーピー Snoopy} \\ \hline
+        \verb|\gt| & ゴシック体 (日本語) & {\gt スヌーピー Snoopy} \\ \hline
+        \verb|\mc| & 明朝体 (日本語) & {\mc スヌーピー Snoopy} \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+
 \newpage
 \renewcommand{\thesection}{付録\Alph{section}}
 \setcounter{section}{0}
 
-\section{環境}
-僕が毎回使っているプリセットです。Githubの公開レポジトリに\verb|sample/getstarted.tex|として配布しています。
+\section{環境} \label{sec:env}
+僕が毎回使っているプリセットです。\GitHub \verb|BonyChops / latex-cheatsheet|に\verb|sample/getstarted.tex|として配布しています。
 \begin{lstlisting}
 \documentclass[a4j, titlepage]{jarticle}
 \usepackage{float}
@@ -643,8 +731,8 @@ mktexlsr
 \end{enumerate}
 
 \newpage
-\section{VSCodeで\LaTeX を扱う}
-みなさん、エディタは何を使っていますか? えっ、\TeX \ Worksですか $\cdots$。 いえ、決して否定してはいませんが、もし\textbf{テキトーにインストールして勝手にはいってきたやつを使っている}のであれば、もっと良いエディタもありますよ! というご提案です。今回はその一つである\textbf{Visual Studio Code}をご紹介します。
+\section{\VSCode VSCodeで日本語 を扱う}
+みなさん、エディタは何を使っていますか? えっ、\TeX \ Worksですか $\cdots$。 いえ、決して否定してはいませんが、もし\textbf{テキトーにインストールして勝手にはいってきたやつを使っている}のであれば、もっと良いエディタもありますよ! というご提案です。今回はその一つである\textbf{\VSCode Visual Studio Code}をご紹介します。
 
 \begin{figure}[htbp]
     \begin{center}
@@ -663,26 +751,118 @@ mktexlsr
             \end{center}
         \end{figure}
         \item サイドバーにエクスプローラがあるため\textbf{複数ファイルがあっても把握しやすい！}
-        \begin{figure}[H]
-            \begin{center}
-               \includegraphics[width=5cm]{./image/vscode-sidebar.png}
-            \end{center}
-        \end{figure}
         \item エラーが(比較的)\textbf{わかりやすい！}
+        \item コンパイルしなくても、カーソルをのせると\textbf{数式がプレビューされる！}
+        \item コマンドが\textbf{色分けされて見やすい！}
+        \item \textbf{Git}が使えるから、\textbf{レポートのバックアップも5秒以内！}(要ショートカット)
+        \item \textbf{Discord}のRich Presenceで編集中のファイルを知ってもらえるから、\textbf{レポートやってますよ自慢ができる！}(需要は俺)
+
+
+
+        \item VSCodeの\textbf{ショートカットが使える！}
+        \begin{itemize}
+            \item 文字を選択した後、\verb|(|, \verb|[|, \verb|{|, \verb|$|を入力すると、その記号(とその対になる記号)で囲ってくれる！
+            \item マルチカーソルで\textbf{複数を一度に編集！}
+            \item Git操作のショートカットを割り当てて、\textbf{音速Commit \& Push！}
+            \item 自分でショートカットを\textbf{細かく決められる！}
+        \end{itemize}
+        \item ダークテーマだから\textbf{目に優しい！}(もちろんライトテーマもあるよ！好きなテーマを探そう)
+        \item コンパイルが\textbf{早くなるらしい！}(諸説あり)
     \end{itemize}
 
 \end{multicols*}
 
-\subsection*{VSCodeで書くメリット}
+\subsection*{VSCodeで書くデメリット}
 \begin{itemize}
-    \item a
+    \item \TeX \ Worksにある、「PDFのここの部分と\TeX ソースのここが対応してる」を表示してくれる機能がない
+    \item 最初のセットアップが少々面倒かもしれない
+    \item VSCodeのPDFビューワに、クリックしたところだけをズームする機能がない(探せばあるかも？)
+    \item なんだかんだもう\TeX \ Worksには戻れなくなるかもしれない
 \end{itemize}
 
+\subsection*{セットアップ}
+\begin{enumerate}
+    \item まずは\TeX \ Liveを通常通りインストールします(\TeX \ WorksはあってもなくてもOK)\\
+    \quad すでにインストールしてある場合はここを飛ばしてください。バージョンはおそらくいくつでも大丈夫だと思います(2016-2019の動作確認済です)。インストール時にPATH(環境変数)を通すか聞かれた場合は、通すようにお願いしておきましょう。聞かれなかったり、お願いし忘れた場合は自分でパスを通します。詳しくは次。
+    \item \TeX \ LiveのPATH(環境変数)が通っているか確認する\\
+    \quad まず、コマンドプロンプト / ターミナルを開き\verb|ptex2pdf|と入力し\verb|Enter|。コマンドが見つからないと言われたら\ref{enu:path}を行う。
+    \begin{enumerate}
+        \item \label{enu:path}\TeX \ LiveのPATH(環境変数)を通す \\
+        \quad 以下のPATHを通してください。通し方がわからない場合は、ここに書くと膨大になっちゃうので、こちらの記事をご覧ください。\\
+        Windows 10でのパスの通し方 - Qiita\\
+        (\url{https://qiita.com/BonyChops/items/a56ea9d0194a9992fd16})
+        \begin{lstlisting}[caption=Windowsの場合のパス]
+C:\texlive\{TeXの西暦}\bin\win32\
+        \end{lstlisting}
+    \end{enumerate}
+    \item \textbf{VSCode}をインストールする \\
+    \quad Windowsの場合、「VSCodeで開く」を追加する等のオプションはできるだけつけておいたほうが良いでしょう。
+    \item \textbf{VSCode}に必要な拡張機能を入れておく\\
+    \quad VSCodeを起動した後、左側のサイドバーにある拡張機能のアイコンをクリックすると、Marketplaceにアクセスすることができます。ここで、VSCodeスタータの皆様に、俺的イチオシ拡張機能を列挙しておきます。正直何もわからない場合は以下を全部入れてもいいと思います(☆は必須、それ以外は任意です)
+    \begin{figure}[H]
+        \begin{center}
+           \includegraphics[width=2cm]{image/vscode-extension.png}
+        \end{center}
+    \end{figure}
+    \begin{itemize}
+        \item[☆] LaTeX Workshop - サジェストやコンパイル、色々やってくれる優れもの
+        \item[☆] Snippet Generator - この後作るユーザースニペットがめちゃくちゃ簡単に作れるようになります
+        \item Japanese Language Pack for Visual Studio Code - VSCodeが日本語になります
+        \item Bracket Pair Colorizer 2 - 括弧の深度ごとに色分けされ、とにかくめちゃくちゃ見やすくなる
+        \item Trailing Spaces - 行末に無駄なスペースが合った場合、そこが赤くなります
+        \item zenkaku - 全角スペースを使っていた場合、そこが白くなります
+        \item Discord Presence - Discordで自分の活動を自慢したい人向け
+        \item Code Spell Checker - 英単語でスペルが間違っていた場合青色の波線で教えてくれる
+        \item Settings Sync - Githubのアカウントをリンクして、インストールした拡張機能やその設定をバックアップ。これで別環境への移行も簡単にできます
+        \begin{itemize}
+            \item なんとそのうち\textbf{VSCode}が公式に設定のバックアップをできるようにするんだとか(しかも仕様はこの拡張機能とほとんど同じで，バックアップ先をMicrosoftアカウントや\GitHub Githubに指定可能)！興味がある人はこの拡張機能の代わりに公式のバックアップ機能を有効にしてもいいかもしれない(ただしまだプレビュー機能だそうです)．
+        \end{itemize}
+        \item VS Code Counter - ワークスペース内のプロジェクトで、自分が何行書いたかを知れる
+    \end{itemize}
+    \item 設定を構成する\\
+    \verb|Ctrl + Shift + P|もしくは\verb|F1|でコマンドを入力します。"\verb|settings json|"と入力し、 \text {\gt 基本設定: 設定(JSON)を開く}  を選択し，\GitHub \verb|bonychops/latex-cheetsheet|の\verb|settings/setting.json|の中身を貼り付けてください．
+    \item ビルドしてみる\\
+    とりあえずこれで最低限の設定は完了したので，試しにビルドしてみましょう．\verb|.tex|のファイルを作成してみて，いろいろ書いて，\verb|Ctrl + Alt + B|で正常にビルドできれば成功です．完成したPDFは\verb|Ctrl + Alt + V|で確認できます．
+\end{enumerate}
 
-\section{\LaTeX トラブルシューティングガイド}
+
+\subsection*{ユーザースニペットを使いこなす}
+早く書くために，スニペットを設定してみましょう．
+\subsubsection*{(例)}
+\verb|\screen| $\rightarrow$ \verb|Tab| $\downarrow$
+\begin{lstlisting}
+    \begin{screen}
+
+    \end{screen}
+\end{lstlisting}
+\begin{enumerate}
+    \item 画面左下歯車をクリック
+    \item "\textbf{ユーザー スニペット}"
+    \item "\textbf{新しい グローバル スニペット ファイル}"
+    \item "\verb|latex|"
+    \item \GitHub \verb|bonychops/latex-cheetsheet| の \verb|settings/snippet.json|を貼り付ける
+\end{enumerate}
+
+\subsection*{ユーザースニペットを自作する}
+\TeX は便利だけど，毎回プリセット(\verb|\begin{document}より上の部分|)を書くのは大変 $\cdots$ と思っている人必見！さっきのスニペット機能を生かすと，毎回前回のレポートをコピーして $\cdots$ という無駄な時間をなくし，あなたの大切な時間を守れます！
+
+\begin{enumerate}
+    \item まず，設定したいプリセットを用意します．\ref{sec:env}から丸パクリでも良いです
+    \item プリセットのソースファイルが選ばれている状態で\verb|Ctrl + Shift + P| $\rightarrow$ "\verb|Generate snippet|"
+    \item "\verb|latex|"
+    \item name: 適当な名前
+    \item prefix: 呼び出す際のコマンドみたいなやつ
+    \item description: 特にいらない
+    \item 完成！
+    \item テストしてみる: \\\verb|Ctrl + A| で選んだ後全部消してみて，何もない場所でprefixを打つと，登録したプリセットが現れます！
+\end{enumerate}
+
+
+\section{日本語 トラブルシューティングガイド}
 
 \begin{thebibliography}{9}
-    \bibitem{text} 令和2年度後期工学実験実習IIIテキスト
+    \bibitem{size} LaTeXコマンド集 - 文字サイズ \url{http://www.latex-cmd.com/style/size.html}
+    \bibitem{style} LaTeXコマンド集 - 書体 \url{http://www.latex-cmd.com/style/style.html}
 \end{thebibliography}
 
 
